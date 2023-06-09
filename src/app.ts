@@ -22,8 +22,8 @@ app.use('/api/v1/users/', UserRoutes)
 //   })
 //   res.send('Working Successfully')
 // })
-// app.get('/', (req: Request, res: Response, next: NextFunction) => {
-//   next('hai hai error')
+// app.get('/', (req: Request, res: Response, _next: NextFunction) => {
+//   Promise.reject(new Error('hai hai error'))
 // })
 
 // global error hendeler
