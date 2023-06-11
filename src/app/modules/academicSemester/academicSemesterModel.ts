@@ -8,7 +8,7 @@ import {
   academicSemesterMonths,
   academicSemesterTittle,
 } from './academicSemester.constant';
-import status from 'http-status';
+import httStatus from 'http-status';
 import ApiError from '../../../errors/ApiError';
 
 // creating a model
@@ -51,7 +51,10 @@ academicSemesterSchema.pre('save', async function (next) {
     year: this.year,
   });
   if (isExist) {
-    throw new ApiError(status.CONFLICT, 'Academic Semester is Already Exist');
+    throw new ApiError(
+      httStatus.CONFLICT,
+      'Academic Semester is Already Exist'
+    );
   }
   next();
 });
